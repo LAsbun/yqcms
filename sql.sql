@@ -69,14 +69,6 @@ create table if not exists project_news(
 	on update current_timestamp
 );
 
-#最新公告 (announcement proclaim inform)
-create table if not exists project_annou(
-	annou_id int not null primary key auto_increment,
-	annou_name varchar(128) not null,
-	annou_content text,
-	annou_createTime timestamp default current_timestamp
-	on update current_timestamp
-);
 #其他模块
 create table if not exists project_other(
 	other_id int not null primary key auto_increment,
