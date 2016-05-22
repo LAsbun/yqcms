@@ -52,6 +52,14 @@ create table if not exists project_attr(
 	references project_product(product_id)
 );
 
+#新闻分类
+create table if not exists project_newstype(
+	newstype_id int not null auto_increment primary key,
+	newstype_name varchar(30) not null,
+	newstype_createTime timestamp default current_timestamp 
+	on update current_timestamp
+);
+
 #新闻
 create table if not exists project_news(
 	news_id int not null primary key auto_increment,
