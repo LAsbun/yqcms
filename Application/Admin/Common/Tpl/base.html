@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <load href="__PUBLIC__/css/bootstrap.min.css" />
+    <load href="__PUBLIC__/css/bootstrap-theme.min.css" />
+
+    <!-- 去掉ul和li的点 -->
+
+    <style type="text/css">
+        ul li{
+            list-style-type:none;
+        }
+    </style>
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <!-- css内容 -->
+    <block name="css"></block>
+
+    <h1 class="text-center">欢迎使用yqCMS</h1>
+    <hr/>
+
+    <!-- 头部 -->
+    <block name="head"></block>
+</head>
+<body>
+<div class="col-sm-1 col-md-3">
+    <div >
+        <h3>管理列表</h3>
+        <ul class="btn-group-vertical">
+            <li>
+                <button class="btn btn-primary" type="button"
+                        data-toggle="collapse"
+                        data-target="#protype_m"
+                        aria-expanded="false"
+                        aria-controls="#protype_m" onclick="jump(this)">
+                    产品管理
+                </button>
+                <br/>
+
+                <div class="collapse" id="protype_m">
+                    <ul>
+                        <li><a class="btn btn-default" href="/yqcms/index.php/Admin/Product/index">办公案例</a></li>
+                        <li><a class="btn btn-default" href="">公共设施</a></li>
+                        <li><a class="btn btn-default" href="">酒店会所</a></li>
+                        <li><a class="btn btn-default" href="">精装修房</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <button class="btn btn-primary" type="button"
+                        data-toggle="collapse"
+                        data-target="#news_m"
+                        aria-expanded="false"
+                        aria-controls="#news_m" onclick="jump(this)">
+                    资讯管理
+                </button>
+                <br/>
+
+                <div class="collapse" id="news_m">
+                    <ul>
+                        <li><a class="btn btn-default" href="">最新公告</a></li>
+                        <li><a class="btn btn-default" href="">公司新闻</a></li>
+                        <li><a class="btn btn-default" href="">业内资讯</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <button class="btn btn-primary" type="button"
+                        data-toggle="collapse"
+                        data-target="#about_m"
+                        aria-expanded="false"
+                        aria-controls="#about_m" onclick="jump(this)">
+                    关于
+                </button>
+                <br/>
+
+                <div class="collapse" id="about_m">
+                    <ul>
+                        <li><a class="btn btn-default" href="">关于我们</a></li>
+                        <!--<li><a class="btn btn-default" href="">公共设施</a></li>-->
+                        <!--<li><a class="btn btn-default" href="">酒店会所</a></li>-->
+                        <!--<li><a class="btn btn-default" href="">精装修房</a></li>-->
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <button class="btn btn-primary" type="button"
+                        data-toggle="collapse"
+                        data-target="#picture_m"
+                        aria-expanded="false"
+                        aria-controls="#picture_m" onclick="jump(this)">
+                    图片管理
+                </button>
+                <br/>
+
+                <div class="collapse" id="picture_m">
+                    <ul>
+                        <li><a class="btn btn-default" href="">图片管理</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 左侧管理栏 -->
+    <block name="left-menu"></block>
+</div>
+
+<div class="col-md-8 col-sm-1">
+    <!-- 右侧内容 -->
+    <block name="right-menu"></block>
+</div>
+<!-- 底部 -->
+<block name="foot"></block>
+<!-- js内容 -->
+
+
+<load href="__PUBLIC__/js/jquery.min.js" />
+<load href="__PUBLIC__/js/bootstrap.min.js" />
+<block name="js"></block>
+
+
+
+</body>
+</html>

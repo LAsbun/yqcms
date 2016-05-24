@@ -25,7 +25,7 @@ class Upload {
         'saveName'      =>  array('uniqid', ''), //上传文件命名规则，[0]-函数名，[1]-参数，多个参数使用数组
         'saveExt'       =>  '', //文件保存后缀，空则使用原后缀
         'replace'       =>  false, //存在同名是否覆盖
-        'hash'          =>  true, //是否生成hash编码
+        'hash'          =>  false, //是否生成hash编码
         'callback'      =>  false, //检测文件是否存在回调，如果存在返回文件信息数组
         'driver'        =>  '', // 文件上传驱动
         'driverConfig'  =>  array(), // 上传驱动配置

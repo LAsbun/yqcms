@@ -1,0 +1,94 @@
+<extend name="./Application/Admin/Common/Tpl/base.html" xmlns="http://www.w3.org/1999/html"/>
+
+<block name="right-menu">
+    <div class="page-container">
+        <div class="form form-horizontal" id="form-article-add">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品标题：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <input type="text" class="input-text" value="" placeholder="" id="" name="sectype_name">
+                </div>
+            </div>
+            <hr/>
+            <p id="image_area" >
+            </p>
+            <hr/>
+            <div class="well">
+                <form id="form1" >
+                    <input type="file" name="photo"/>
+                    <input type="button" value="提交" onclick="submit_image(this)"/>
+                </form>
+            </div>
+            <p id="image_names" class="hidden">
+            </p>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">详细内容：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    <textarea id="editor_id" name="sectype_content" style="width:700px;height:300px;">
+                    &lt;strong&gt;HTML内容&lt;/strong&gt;
+                    </textarea>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+                    <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {$name}
+    <!--请在下方写此页面业务相关的脚本-->
+
+
+
+</block>
+
+<block name="js">
+    <load href="__PUBLIC__/js/kindeditor/kindeditor-all.js"/>
+    <load href="__PUBLIC__/js/kindeditor/lang/zh-CN.js"/>
+    <load href="__PUBLIC__/css/common.css"/>
+    <script>
+        KindEditor.ready(function(K) {
+            window.editor = K.create('textarea[id=editor_id]',{
+                width:800, height:200,
+                uploadJson:'__MODULE__/Common/upload',
+            });
+
+        });
+        function review_pic(path,name){
+            console.log(path);
+            console.log(name);
+            html = "<div class='col-lg-2'><img src='" + path + "' alt=  class='img-thumbnail' id='area'></div>";
+            $("#image_area").append(html);
+            html = "<input name=text value="+name+"/>";
+            $("#image_names").append(html);
+        }
+
+        function submit_image(doc){
+//              res =   $('#form1').submit();
+//            console.log(res);
+            $.ajax({
+                url:"__URL__/upload",
+                type:"POST",
+                data:new FormData($('#form1')[0]),
+                processData: false,
+                contentType: false,//.serialize(),
+                success:function(callback){
+                    res = jQuery.parseJSON(callback);
+//                    console.log(res);
+                    if(res.error == 1){
+                        alert(res.message);
+                    }
+                    else if(res.error == 0){
+//                        console.log(res.image_path);
+                        review_pic(res.image_path, res.image_name);
+                    }
+                }
+            });
+        }
+
+    </script>
+</block>
