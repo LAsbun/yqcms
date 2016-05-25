@@ -35,9 +35,11 @@ class ProductController extends  Controller
         $this->display();
     }
 
-    public function add_pro()
+    public function add_pro($id)
     {
 //        echo "dsads";
+//        echo $id;
+        $this->id = $id;
         $this->display();
     }
 
@@ -62,6 +64,43 @@ class ProductController extends  Controller
             $a = array('error' => 0, 'image_path' => $url, 'image_name' => $image_name);
             echo json_encode($a, JSON_UNESCAPED_UNICODE);
 
+        }
+    }
+
+    public function add(){
+        //图片
+        $image = I('post.image');
+
+        $pro['product_name'] = I('post.title');
+        $pro['product_content'] = I('post.content');
+        $pro['product_sectypeId'] = I('post.id');
+        $data = M('product');
+        $data->create($pro);
+//        echo "dsads";
+        $res = $data->add();
+
+
+
+        if(!$res){
+            $a = array('error'=>1, 'message'=>$data->getError());
+            $this->ajaxReturn($a);
+        }
+        else {
+            $a = $res.'/';
+            if(isset($image) and count($image) != 0){
+                foreach($image as $key => $val){
+                    $arr['image_name'] = $val;
+                    $arr['image_productId'] = $res;
+
+                    $data = M('image');
+
+                    $data->create($arr);
+                    $res = $data->add();
+                    $a .= $res;
+                }
+            }
+            $a = array('error'=>0);
+            $this->ajaxReturn($a);
         }
     }
 }

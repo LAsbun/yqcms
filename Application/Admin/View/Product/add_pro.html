@@ -1,22 +1,22 @@
 <extend name="./Application/Admin/Common/Tpl/base.html" xmlns="http://www.w3.org/1999/html"/>
 
 <block name="right-menu">
-    <div class="page-container">
+    <div class="page-container" id="add_pro">
         <div class="form form-horizontal" id="form-article-add">
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>产品标题：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <input type="text" class="input-text" value="" placeholder="" id="" name="sectype_name">
+                    <input id = "pro_name" type="text" class="input-text" value="" placeholder="" name="sectype_name">
                 </div>
             </div>
             <hr/>
-            <p id="image_area" >
-            </p>
+            <div class="row" id="image_area">
+            </div>
             <hr/>
             <div class="well">
                 <form id="form1" >
                     <input type="file" name="photo"/>
-                    <input type="button" value="提交" onclick="submit_image(this)"/>
+                    <input type="button" value="提交" onclick="submit_image()"/>
                 </form>
             </div>
             <p id="image_names" class="hidden">
@@ -32,17 +32,27 @@
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
                     <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
-                    <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
+                    <!--<button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>-->
                 </div>
             </div>
         </div>
     </div>
 
 
-    {$name}
+
+    <!--遮罩层开始-->
+    <div id="hid_area"  style="display:none;position:fixed;
+    width:100%;height:100%;
+    background:#000;z-index:2;
+    top:0;left:0;opacity:0.7;"></div>
+
+    <div id="content" style="display:none;width:500px;height:300px;position:fixed;
+    top:50%;margin-top:-150px;
+    background:#fff;z-index:3;left:50%;
+    margin-left:-250px;">
+    </div>
+
     <!--请在下方写此页面业务相关的脚本-->
-
-
 
 </block>
 
@@ -61,10 +71,16 @@
         function review_pic(path,name){
             console.log(path);
             console.log(name);
-            html = "<div class='col-lg-2'><img src='" + path + "' alt=  class='img-thumbnail' id='area'></div>";
+            html = '<div class="col-xs-6 col-md-3"> \
+                <a href="#" class="thumbnail"> \
+                    <img src="'+path+'" alt="..."> \
+                </a> \
+            </div>';
+            //<!--html = "<div class='col-lg-2'><img src='" + path + "' alt=  class='img-thumbnail' id='area'></div>";-->
             $("#image_area").append(html);
-            html = "<input name=text value="+name+"/>";
+            html = "<input id='photo' value='"+name+"'/>";
             $("#image_names").append(html);
+            $("#form1")[0][0].value = null; //将初始值改为空
         }
 
         function submit_image(doc){
@@ -86,6 +102,57 @@
 //                        console.log(res.image_path);
                         review_pic(res.image_path, res.image_name);
                     }
+                }
+            });
+        }
+
+        function article_save_submit(){
+
+            var title = $.trim($("#pro_name").val());
+            if(title.length == 0){
+                window.alert("标题不能为空");
+                return;
+            }
+
+            var content = $("#editor_id").val();
+            if(content.length == 0){
+                window.alert("内容不能为空");
+                return;
+            }
+//            console.log(content);
+
+
+            var id = {$id};
+//            console.log(res);
+
+            var photo = $("#image_names").children('input');
+
+//            console.log(photo);
+
+            var image = new Array();
+            for(var i = 0; i < photo.length; ++ i){
+                image[i] = photo[i].value;
+            }
+//            console.log(image);
+//            console.log(id);
+            $.ajax({
+                url:"__URL__/add",
+                type:"POST",
+                data:{content:content, title:title, image:image, id:id},
+                success: function (callback) {
+                    res = callback;
+                    console.log(res);
+                    if(res.error == 1){
+                        window.alert(res.message);
+                    }
+                    else{
+                        document.getElementById("hid_area").style.display =  "block";
+                        document.getElementById("content").style.display = "block";
+                        html = "<h2 id='wait_time'>上传成功 三秒后跳转到<a href='__URL__/index'>管理首页</a></h2>";
+                        $("#content").append(html);
+                        setTimeout('window.location.href = "__URL__/index"', 3000);
+                    }
+
                 }
             });
         }

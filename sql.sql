@@ -35,11 +35,11 @@ create table if not exists yqcms_product(
 	product_id int not null auto_increment primary key,
 	product_name varchar(50) not null,
 	product_content text,
-	product_createTime timestamp default current_timestamp 
+	product_createTime timestamp default current_timestamp
 	on update current_timestamp,
-	product_firtypeId int not null,
-	foreign key (product_id) 
-	references yqcms_firtype(firtype_id)
+	product_sectypeId int not null,
+	foreign key (product_sectypeId)
+	references yqcms_sectype(sectype_id)
 	on delete cascade
 );
 
