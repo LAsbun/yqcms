@@ -3,11 +3,57 @@
   <component name="ChangeListManager">
     <list default="true" id="b1eeffa1-1bf2-46da-8645-de1b21f6ba03" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/Application/Admin/Common/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/ProductController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/ProductController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Product/add_pro.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Product/add_pro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Product/index.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Product/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql.sql" afterPath="$PROJECT_DIR$/sql.sql" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574509c30ceec.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574509c51940d.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574509c5bcfbe.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574509c636162.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574509c6a7941.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574509d52f14e.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574509d5ec087.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450a863b828.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450add282d7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450ae9f23e7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450afac7b77.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450b0b21700.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450b27084df.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450b358c27d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450b45ce342.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450c789b830.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57450d4c04899.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/5745456bef777.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/5745472cac2c9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/5745482d99a09.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454a48a1ee9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454a94bb316.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454bd429bcc.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454be95a011.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454bf8a74f2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454c19ea019.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454cd1df504.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454d099a53f.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454d141d3a0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454def9fa56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454e018ac1d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454e47d6427.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454e4ce45ba.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454f1fad7ef.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454f4a36773.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454f5ae9aeb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454f7662060.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454fa6e3cbe.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57454fb71c8be.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57455017149b5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57455020ad6da.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574550aae7434.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574550af1215d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57455109a23c8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574551e616317.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/5745520a80469.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/574558a68231b.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57455e5bdcb28.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57456d85c7a6d.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Public/image/2016-05/57456d9009ec1.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="yqcms.iws" />
     <ignored path=".idea/workspace.xml" />
